@@ -1,0 +1,411 @@
+/* style.css - Premium Dark Theme styling for PolicyParser */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2563EB;
+    --primary-hover: #1d4ed8;
+    --secondary: #0F172A;
+    --accent: #3B82F6;
+    --background: #020617;
+    --card-bg: #111827;
+    --card-hover-bg: #1f2937;
+    --border: #334155;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --text-main: #FFFFFF;
+    --text-muted: #CBD5E1;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global App Styling overrides */
+.stApp {
+    background-color: var(--background) !important;
+    color: var(--text-main) !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Hide Default Streamlit Menu and Footer */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {background-color: transparent !important;}
+
+/* Custom Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    color: var(--text-main) !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Streamlit Sidebar Customization */
+[data-testid="stSidebar"] {
+    background-color: var(--secondary) !important;
+    border-right: 1px solid var(--border) !important;
+    padding-top: 2rem !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: var(--text-muted) !important;
+}
+
+/* Custom Cards (Glassmorphism & Shadows) */
+.premium-card {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.premium-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    background: rgba(31, 41, 55, 0.8);
+}
+
+/* Stat/Metrics Cards */
+.stat-card {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.stat-val {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Hero Section */
+.hero-container {
+    padding: 80px 0 60px 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #FFFFFF 30%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Sidebar Custom Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0 25px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.sidebar-logo {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+.sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Streamlit Button Overrides */
+.stButton > button {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    font-family: var(--font-heading) !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+    transition: var(--transition) !important;
+    width: auto;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
+    background: linear-gradient(90deg, var(--primary-hover) 0%, var(--primary) 100%) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0px) !important;
+}
+
+/* Secondary Button Mode (e.g. download or outline) */
+.secondary-btn button {
+    background: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-main) !important;
+    box-shadow: none !important;
+}
+
+.secondary-btn button:hover {
+    border-color: var(--accent) !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: var(--accent) !important;
+}
+
+/* Drag & Drop File Uploader */
+[data-testid="stFileUploader"] {
+    border: 2px dashed var(--border) !important;
+    border-radius: var(--radius-lg) !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    padding: 30px !important;
+    transition: var(--transition) !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent) !important;
+    background: rgba(15, 23, 42, 0.8) !important;
+}
+
+[data-testid="stFileUploader"] section {
+    background-color: transparent !important;
+}
+
+/* Metric Widgets Styling */
+[data-testid="stMetric"] {
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px !important;
+    box-shadow: var(--shadow-sm);
+}
+
+[data-testid="stMetricValue"] {
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    color: white !important;
+}
+
+[data-testid="stMetricLabel"] {
+    font-family: var(--font-body) !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+}
+
+/* Progress Bar Customization */
+div[role="progressbar"] > div {
+    background-color: var(--primary) !important;
+}
+
+/* Custom Table / Dataframe wrapper */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.custom-table th {
+    background-color: var(--secondary);
+    color: var(--text-main);
+    text-align: left;
+    padding: 14px 18px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+}
+
+.custom-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    background-color: rgba(17, 24, 39, 0.4);
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+.custom-table tr:hover td {
+    background-color: rgba(17, 24, 39, 0.8);
+    color: #FFFFFF;
+}
+
+/* Badge components */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-success { background: rgba(16, 185, 129, 0.15); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warning { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+.badge-info { background: rgba(37, 99, 235, 0.15); color: var(--accent); border: 1px solid rgba(37, 99, 235, 0.3); }
+
+/* Clause details card styling */
+.clause-box {
+    border-left: 4px solid var(--primary);
+    background: rgba(17, 24, 39, 0.5);
+    padding: 16px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 15px;
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.clause-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.clause-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #FFFFFF;
+}
+
+/* Footer Section */
+.footer-container {
+    margin-top: 80px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Form controls styling wrapper */
+div[data-baseweb="input"], div[data-baseweb="select"] {
+    background-color: var(--secondary) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+div[data-baseweb="input"] input {
+    color: white !important;
+}
+
+/* Adjust general spacing in Streamlit columns */
+[data-testid="column"] {
+    padding: 10px !important;
+}
+
+/* Custom recommendation card */
+.recommendation-card {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* Pro Max Animations & UI Enhancements */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.7); }
+    100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+    animation: scaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+.pro-max-hover:hover {
+    animation: pulseGlow 2s infinite;
+    transform: translateY(-5px) scale(1.01);
+}
+
+.sidebar-logo {
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.hero-title {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+.hero-subtitle {
+    animation: fadeIn 1s ease-out forwards;
+}
